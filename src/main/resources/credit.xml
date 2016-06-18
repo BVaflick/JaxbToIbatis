@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+<sqlMap namespace="credit">
+
+	<typeAlias alias="CREDIT" type="jaxb.Credit" />
+
+	<resultMap id="creditResultMap" class="CREDIT">
+  		<result property="name" column="NAME" />
+  		<result property="maxAmount" column="AMOUNT" />
+  		<result property="term" column="TERM" />
+  		<result property="rate" column="RATE" />
+	</resultMap>
+	
+	<select id="getCreditById" parameterClass="java.lang.Integer" resultMap="creditResultMap">
+		  SELECT * FROM CREDITS WHERE ID = #value#
+	</select>
+
+	<select id="getCredits" parameterClass="CREDIT" resultMap="creditResultMap">
+		SELECT * FROM CREDITS WHERE ID = #value#
+	</select>
+
+	<select id="getMaxId" resultClass="java.lang.Integer">
+		  SELECT MAX(ID) FROM CREDITS
+	</select>
+
+	<insert id="addCredit" parameterClass="CREDIT">
+		INSERT INTO CREDITS (NAME,AMOUNT,TERM,RATE)
+		 VALUES(#name#,#maxAmount#,#term#,#rate#);
+	</insert>
+	
+	<delete id="deleteCreditById" parameterClass="java.lang.Integer">
+		  DELETE FROM CREDITS WHERE ID = #value#
+	</delete>
+	
+</sqlMap>

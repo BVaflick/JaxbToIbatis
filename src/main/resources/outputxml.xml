@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<credits>
+    <credit name="Потребительский кредит без обеспечения">
+        <maxAmount>1500000</maxAmount>
+        <rate>15.9</rate>
+        <term>5</term>
+    </credit>
+    <credit name="Потребительский кредит под поручительство физических лиц">
+        <maxAmount>3000000</maxAmount>
+        <rate>14.9</rate>
+        <term>5</term>
+    </credit>
+    <credit name="Потребительский кредит военнослужащим">
+        <maxAmount>1000000</maxAmount>
+        <rate>16.5</rate>
+        <term>5</term>
+    </credit>
+</credits>
